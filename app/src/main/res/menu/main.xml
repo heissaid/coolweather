@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/add_in"
+        android:title="添加城市"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/jump_to"
+        android:title="城市对比"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/change_to"
+        android:title="小时天气"
+        app:showAsAction="never" />
+
+</menu>

@@ -42,6 +42,8 @@
                     <include layout="@layout/aqi" />
 
                     <include layout="@layout/suggestion" />
+
+                    <include layout="@layout/hourly_forecast"/>
                 </LinearLayout>
 
             </ScrollView>
