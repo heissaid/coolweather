@@ -58,6 +58,7 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView dressSuggestionText;
     private TextView travelText;
     private TextView uvText;
+    private ImageView weatherIcon;
     private LinearLayout hoursForecastLayout;
 
     private ImageView bingPicImg;
@@ -94,6 +95,7 @@ public class WeatherActivity extends AppCompatActivity {
         dressSuggestionText = (TextView) findViewById(R.id.dress_suggestion_text);
         travelText = (TextView) findViewById(R.id.travel_text);
         uvText = (TextView) findViewById(R.id.uv_text);
+        weatherIcon = (ImageView) findViewById(R.id.weather_icon);
 
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -295,6 +297,167 @@ public class WeatherActivity extends AppCompatActivity {
         dressSuggestionText.setText(dress);
         travelText.setText(travel);
         uvText.setText(uv);
+        switch (weatherInfo) {
+            case "晴":
+                weatherIcon.setImageResource(R.drawable.ic_100);
+                break;
+            case "多云":
+                weatherIcon.setImageResource(R.drawable.ic_101);
+                break;
+            case "少云":
+                weatherIcon.setImageResource(R.drawable.ic_102);
+                break;
+            case "晴间多云":
+                weatherIcon.setImageResource(R.drawable.ic_103);
+                break;
+            case "阴":
+                weatherIcon.setImageResource(R.drawable.ic_104);
+                break;
+            case "有风":
+                weatherIcon.setImageResource(R.drawable.ic_200);
+                break;
+            case "平静":
+                weatherIcon.setImageResource(R.drawable.ic_201);
+                break;
+            case "微风":
+                weatherIcon.setImageResource(R.drawable.ic_202);
+                break;
+            case "和风":
+                weatherIcon.setImageResource(R.drawable.ic_203);
+                break;
+            case "清风":
+                weatherIcon.setImageResource(R.drawable.ic_204);
+                break;
+            case "强风":
+                weatherIcon.setImageResource(R.drawable.ic_205);
+                break;
+            case "劲风":
+                weatherIcon.setImageResource(R.drawable.ic_205);
+                break;
+            case "疾风":
+                weatherIcon.setImageResource(R.drawable.ic_206);
+                break;
+            case "大风":
+                weatherIcon.setImageResource(R.drawable.ic_207);
+                break;
+            case "烈风":
+                weatherIcon.setImageResource(R.drawable.ic_208);
+                break;
+            case "风暴":
+                weatherIcon.setImageResource(R.drawable.ic_209);
+                break;
+            case "狂爆风":
+                weatherIcon.setImageResource(R.drawable.ic_210);
+                break;
+            case "飓风":
+                weatherIcon.setImageResource(R.drawable.ic_211);
+                break;
+            case "龙卷风":
+                weatherIcon.setImageResource(R.drawable.ic_212);
+                break;
+            case "热带风暴":
+                weatherIcon.setImageResource(R.drawable.ic_213);
+                break;
+            case "阵雨":
+                weatherIcon.setImageResource(R.drawable.ic_300);
+                break;
+            case "强阵雨":
+                weatherIcon.setImageResource(R.drawable.ic_301);
+                break;
+            case "雷阵雨":
+                weatherIcon.setImageResource(R.drawable.ic_302);
+                break;
+            case "强雷阵雨":
+                weatherIcon.setImageResource(R.drawable.ic_303);
+                break;
+            case "雷阵雨伴有冰雹":
+                weatherIcon.setImageResource(R.drawable.ic_304);
+                break;
+            case "小雨":
+                weatherIcon.setImageResource(R.drawable.ic_305);
+                break;
+            case "中雨":
+                weatherIcon.setImageResource(R.drawable.ic_306);
+                break;
+            case "大雨":
+                weatherIcon.setImageResource(R.drawable.ic_307);
+                break;
+            case "极端降雨":
+                weatherIcon.setImageResource(R.drawable.ic_308);
+                break;
+            case "毛毛雨":
+                weatherIcon.setImageResource(R.drawable.ic_309);
+                break;
+            case "细雨":
+                weatherIcon.setImageResource(R.drawable.ic_309);
+                break;
+            case "暴雨":
+                weatherIcon.setImageResource(R.drawable.ic_310);
+                break;
+            case "大暴雨":
+                weatherIcon.setImageResource(R.drawable.ic_311);
+                break;
+            case "特大暴雨":
+                weatherIcon.setImageResource(R.drawable.ic_312);
+                break;
+            case "冻雨":
+                weatherIcon.setImageResource(R.drawable.ic_313);
+                break;
+            case "小雪":
+                weatherIcon.setImageResource(R.drawable.ic_400);
+                break;
+            case "中雪":
+                weatherIcon.setImageResource(R.drawable.ic_401);
+                break;
+            case "大雪":
+                weatherIcon.setImageResource(R.drawable.ic_402);
+                break;
+            case "暴雪":
+                weatherIcon.setImageResource(R.drawable.ic_403);
+                break;
+            case "雨夹雪":
+                weatherIcon.setImageResource(R.drawable.ic_404);
+                break;
+            case "雨雪天气":
+                weatherIcon.setImageResource(R.drawable.ic_405);
+                break;
+            case "阵雨夹雪":
+                weatherIcon.setImageResource(R.drawable.ic_406);
+                break;
+            case "阵雪":
+                weatherIcon.setImageResource(R.drawable.ic_407);
+                break;
+            case "薄雾":
+                weatherIcon.setImageResource(R.drawable.ic_500);
+                break;
+            case "雾":
+                weatherIcon.setImageResource(R.drawable.ic_501);
+                break;
+            case "霾":
+                weatherIcon.setImageResource(R.drawable.ic_502);
+                break;
+            case "扬沙":
+                weatherIcon.setImageResource(R.drawable.ic_503);
+                break;
+            case "浮尘":
+                weatherIcon.setImageResource(R.drawable.ic_504);
+                break;
+            case "沙尘暴":
+                weatherIcon.setImageResource(R.drawable.ic_507);
+                break;
+            case "强沙尘暴":
+                weatherIcon.setImageResource(R.drawable.ic_508);
+                break;
+            case "热":
+                weatherIcon.setImageResource(R.drawable.ic_900);
+                break;
+            case "冷":
+                weatherIcon.setImageResource(R.drawable.ic_901);
+                break;
+            default:
+                break;
+
+        }
         weatherLayout.setVisibility(View.VISIBLE);
         Intent intent = new Intent(this, AutoUpdateService.class);
         startService(intent);
